@@ -1,0 +1,88 @@
+
+1. Имам веќе постоечки профил на GitHub.
+
+2. По внесување на master во текстуалното поле, кликнав Update. Default-ната гранка на 
+   понатамошните репоа ќе се вика master наместо main.
+
+3. Repositories -> New -> Create repository
+
+4. Создавање на директориум:     mkdir SI_2023_lab1_216067
+   Влегување во директориумот:   cd SI_2023_lab1_216067
+
+5. Иницијализација на Git во директориумот:  git init
+
+6. По создавањето на README.MD се извршуваат следните команди:
+	git add README.md                (од untracked преминува во staged)
+	git commit -m "Initial commit"   (правење на комит)
+
+7. По создавањето на SILab1.java се извршуваат следните команди:
+	git add SILab1.java               (од untracked преминува во staged, може и git add .)
+	git commit -m " Add java class "  (правење на комит)
+
+8. Синхронизацијата ја извршив со следните три команди:
+	git remote add origin https://github.com/Mila-Slavkovska/SI_2023_lab1_216067.git
+	git branch -M master
+	git push -u origin master
+
+9. Отварање на гранки:
+	git branch bug1
+	git branch bug2
+	git branch bug3
+
+10. Префрлање на гранка bug1: git checkout bug1
+
+11. По поправање на грешката од <= во < се извршуваат следните кманди:
+	git add SILab1.java
+	git commit -m "Fix wrong loop for reading"
+
+12. Префрлање на гранка bug2: git checkout bug2
+
+13. По поправање на грешката од == во != се извршуваат следните кманди:
+	git add SILab1.java
+	git commit -m "Fix wrong condition in filterOddNumbers"
+
+14. Префрлање на гранка bug3: git checkout bug3
+
+15. По поправање на грешката од public во private, sum=1 sum=0, sum*=el, sum+=el се 
+    извршуваат следните кманди:
+	git add SILab1.java
+	git commit -m "Fix method sumEvenNumbers"
+
+16. Синхронизација со оддалечениот репозиториум:
+	git push -u origin bug1
+	git push -u origin bug2
+	git push -u origin bug3
+
+17. Префрлање на гранка master: git checkout master
+
+18. Спојување на гранката bug1 кон master: git merge bug1
+    Не доаѓа до конфликти и се користи стратегијата Fast forward.
+
+19. Синхронизација на сите гранки со оддалеченото репо: git push origin –all
+
+20. Спојување на гранката bug2 кон master: git merge bug2
+    Не доаѓа до конфликт и се користи Recursive merge. Но бидејќи на master има комит 
+    кој го нема на bug2, мора да се создаде merge commit.
+
+21. Синхронизација на сите гранки со оддалеченото репо: git push origin –all
+
+22. Префрлање на гранка bug3: git checkout bug3
+
+23. Rebase спрема master: git rebase master
+
+24. Префрлање на гранка master: git checkout master
+
+25. Спојување на гранката bug3 кон master: git merge bug3
+    Не доаѓа до конфликт и бидејќи правиме Rebase се користи стратегијата Fast forward. 
+
+26. Синхронизација со оддалечениот репозиториум:
+	git push -u origin bug1
+	git push -u origin bug2
+	git push -u origin bug3 –force
+
+27. По додавање на logs.txt и 216067.txt за да се направи последен commit прво треба овие 
+    untracked датотеки да се постават на сцена. Ова може да се постигне со следните команди:
+	git add –all
+	git commit -m "Final commit"   
+
+28. Синхронизација на сите гранки со оддалеченото репо: git push origin –all
